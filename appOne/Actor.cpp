@@ -1,5 +1,6 @@
 #include "Actor.h"
 
+// 初期化リストを使用している
 Actor::Actor(Game* game)
 	: mGame(game)
 	, mState(EActive)
