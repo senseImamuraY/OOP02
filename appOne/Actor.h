@@ -9,6 +9,9 @@ public:
 	};
 
 	Actor(class Game* game);
+	// 基底クラスのポインタを通じて派生クラスのオブジェクトを破棄する際に、
+	// 適切な派生クラスのデストラクタが呼び出されるようにするためvirtualを
+	// デストラクタに付ける
 	virtual ~Actor();
 	void Update();
 	virtual void UpdateActor() {};
@@ -33,6 +36,7 @@ private:
 	float mRotation;
 	float mScale;
 	//Gameクラスのpublicメンバにアクセスするポインタ
+	// これがあることでシングルトンを使用しなくても良くなる（依存性の注入）
 	class Game* mGame;
 };
 
